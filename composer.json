@@ -1,0 +1,19 @@
+{
+  "name": "dietervyncke/oak-flash-message",
+  "description": "Flash messages for Oak",
+  "keywords": ["flash", "message", "oak"],
+  "type": "library",
+  "authors": [
+    {
+      "name": "Dieter Vyncke",
+      "email": "vynckedieter@gmail.com"
+    }
+  ],
+  "require": {},
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Tnt\\FlashMessage\\": "src/"
+    }
+  }
+}
