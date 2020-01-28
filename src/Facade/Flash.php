@@ -7,8 +7,8 @@ use Tnt\FlashMessage\Contracts\FlashNotifierInterface;
 
 class Flash extends Facade
 {
-	protected static function getContract(): string
-	{
-		return FlashNotifierInterface::class;
-	}
+    protected static function getContract(): string
+    {
+        return FlashNotifierInterface::class;
+    }
 }

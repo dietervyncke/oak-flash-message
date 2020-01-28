@@ -10,16 +10,19 @@ use Tnt\FlashMessage\Contracts\FlashNotifierInterface;
 
 class FlashMessageServiceProvider extends ServiceProvider
 {
-	public function boot(ContainerInterface $app)
-	{
-		Console::registerCommand(Flash::class);
-	}
+    public function boot(ContainerInterface $app)
+    {
+        if ($app->isRunningInConsole()) {
+            Console::registerCommand(Flash::class);
+        }
+    }
 
-	public function register(ContainerInterface $app)
-	{
-		$app->singleton(FlashNotifierInterface::class, FlashNotifier::class);
+    public function register(ContainerInterface $app)
+    {
+        $app->singleton(FlashNotifierInterface::class, FlashNotifier::class);
 
-		// Console
-		$app->set(Flash::class, Flash::class);
-	}
+        if ($app->isRunningInConsole()) {
+            $app->set(Flash::class, Flash::class);
+        }
+    }
 }
